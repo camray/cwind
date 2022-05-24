@@ -2,7 +2,6 @@ import clsx from "clsx";
 import preval from "babel-plugin-preval/macro";
 
 function cwind(...args) {
-  console.log(`[${args.map((t) => `"${t}"`).join(",")}]`);
   const x = preval`
     const escalade = require('escalade/sync');
     const generateRules = require("tailwindcss/lib/lib/generateRules").generateRules;
