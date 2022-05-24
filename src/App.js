@@ -2,7 +2,7 @@ import "./App.css";
 import cwind from "./cwind";
 
 function App() {
-  cwind("bg-red-500", "bg-blue-500");
+  cwind("bg-red-500");
   return (
     <div className="App">
       <header className="App-header">

@@ -20,11 +20,12 @@ function cwind(...args) {
 
     const config = resolveConfig(configPath);
     const context = createContext(config);
-    const rules = generateRules(new Set([${args
-      .map((t) => `"${t}"`)
-      .join(",")}]), context);
+    const rules = generateRules(new Set(["bg-red-500", "bg-blue-500"]), context);
+
+    // This returns the rule and an ID
+    // Could use the ID to dedup
    
-    module.exports = rules.toString();
+    module.exports = rules.join(',');
   `;
   console.log(x);
 
