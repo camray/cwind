@@ -1,22 +1,11 @@
 import clsx from "clsx";
 import preval from "babel-plugin-preval/macro";
-// import { generateRules } from "tailwindcss/lib/lib/generateRules";
-// import { createContext } from "tailwindcss/lib/lib/setupContextUtils";
-
-// let globalTailwindConfig;
-
-function initCwind(tailwindConfig) {
-  // globalTailwindConfig = tailwindConfig;
-}
 
 function cwind(...args) {
-  // if (!globalTailwindConfig) {
-  //   throw new Error("must call initCwind(tailwindConfig) before cwind()");
-  // }
-
+  console.log(`[${args.map((t) => `"${t}"`).join(",")}]`);
   const x = preval`
     const escalade = require('escalade/sync');
-    // const generateRules = require("tailwindcss/lib/lib/generateRules").generateRules;
+    const generateRules = require("tailwindcss/lib/lib/generateRules").generateRules;
     const resolveConfig = require('tailwindcss/resolveConfig');
     const createContext = require("tailwindcss/lib/lib/setupContextUtils").createContext;
 
@@ -31,9 +20,11 @@ function cwind(...args) {
 
     const config = resolveConfig(configPath);
     const context = createContext(config);
-    // const rules = generateRules(new Set(["bg-slate-500"]), context);
-
-    module.exports = context;
+    const rules = generateRules(new Set([${args
+      .map((t) => `"${t}"`)
+      .join(",")}]), context);
+   
+    module.exports = rules.toString();
   `;
   console.log(x);
 
@@ -41,4 +32,4 @@ function cwind(...args) {
 }
 
 export default cwind;
-export { cwind, initCwind };
+export { cwind };

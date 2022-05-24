@@ -1,11 +1,8 @@
 import "./App.css";
-import cwind, { initCwind } from "./cwind";
-import resolveConfig from "tailwindcss/resolveConfig";
+import cwind from "./cwind";
 
 function App() {
-  const config = resolveConfig("../tailwind.config.js");
-  initCwind(config);
-  cwind("");
+  cwind("bg-red-500", "bg-blue-500");
   return (
     <div className="App">
       <header className="App-header">
