@@ -1,6 +1,6 @@
 # CWind
 
-The goal of this project is to be "`clsx` for tailwind`. 
+The goal of this project is to be "`clsx` for tailwind". 
 
 clsx is great. It's tiny, no dependencies, and easy to work with. 
 
