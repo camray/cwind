@@ -15,11 +15,11 @@ CWind attempts to work with your tailwind config and resolve such conflicts. Ove
 
 ```tsx
 export const MyCustomComponent = ({className}: MyCustomComponentProps) => {
-  return <div className={cwind("bg-red", className)}>This is my custom styled component!</div>
+  return <div className={cwind("bg-red m-3 rounded", className)}>This is my custom component</div>
 };
 ```
 
 implementation:
-```
+```tsx
 <MyCustomComponent className="bg-blue" />
 ```
