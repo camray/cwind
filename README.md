@@ -23,3 +23,7 @@ implementation:
 ```tsx
 <MyCustomComponent className="bg-blue" />
 ```
+
+## Status
+
+It doesn't work yet. I'm running into issues getting the tailwind config and rules loaded client side. I don't want to grow the bundle of projects that use this to crazy extents. Currently I'm using preval to get tailwind values, but I'll need to move away from that somehow 
